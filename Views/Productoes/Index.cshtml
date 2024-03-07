@@ -1,0 +1,71 @@
+﻿@model IEnumerable<pruevas_de_a_5.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom_producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Elaboracio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Caducidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodProveedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom_producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Elaboracio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Caducidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProveedor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Cod_producto">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Cod_producto">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Cod_producto">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
